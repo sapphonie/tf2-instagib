@@ -250,7 +250,7 @@ bool GetClientAimPosition(int iClient, float fEyes[3], float fAim[3])
 {
     float fEyesAngles[3];
     GetClientEyeAngles(iClient, fEyesAngles);
-    TR_TraceRayFilter(fEyes, fEyesAngles, (CONTENTS_SOLID|CONTENTS_HITBOX), RayType_Infinite, TraceRay_DontHitSelf, iClient);
+    TR_TraceRayFilter(fEyes, fEyesAngles, (CONTENTS_SOLID|CONTENTS_HITBOX), RayType_Infinite, TraceRay_OnlyHitWorld, iClient);
     if (TR_DidHit())
     {
         TR_GetEndPosition(fAim);
